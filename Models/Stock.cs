@@ -1,0 +1,16 @@
+public class Stock
+{
+    public int StockId { get; set; }
+    public int ItemId { get; set; }
+    public int WarehouseId { get; set; }
+    public string? BatchNo { get; set; }
+    public string? SerialNo { get; set; }
+    public int QuantityOnHand { get; set; }
+    public int QuantityReserved { get; set; }
+    public int QuantityAvailable { get; set; }
+    public DateTime LastUpdated { get; set; } = DateTime.UtcNow;
+
+    // Navigation
+    public Item? Item { get; set; }
+    public Warehouse? Warehouse { get; set; }
+}
