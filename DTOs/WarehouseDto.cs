@@ -1,7 +1,14 @@
-public class WarehouseDto
+// 3. Warehouse DTO
+public class WarehouseDto : BaseDto
 {
-    public int WarehouseId { get; set; }
-    public string WarehouseName { get; set; } = string.Empty;
-    public string Location { get; set; } = string.Empty;
-    public int? ManagerId { get; set; }
+    public string WarehouseName { get; set; } = default!;
+    public string Location { get; set; } = default!;
+    public string Manager { get; set; } = default!;
+}
+
+public class WarehouseCreateDto 
+{
+    public string WarehouseName { get; set; } = default!;
+    public string Location { get; set; } = default!;
+    public string Manager { get; set; } = default!;
 }

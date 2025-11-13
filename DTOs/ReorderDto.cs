@@ -1,11 +1,24 @@
-public class ReorderAlertDto
+// ReorderRule DTO
+public class ReorderRuleDto : BaseDto
 {
-    public int ReorderId { get; set; }
-    public int ItemId { get; set; }
-    public int WarehouseId { get; set; }
-    public int CurrentStock { get; set; }
+    public Guid ItemId { get; set; } = default!;
     public int ReorderLevel { get; set; }
-    public int SuggestedQuantity { get; set; }
-    public DateTime AlertDate { get; set; }
-    public string Status { get; set; } = "Pending";
+    public int ReorderQty { get; set; }
+    public int LeadTimeDays { get; set; }
 }
+
+// DTO for creating
+public class ReorderRuleCreateDto
+{
+    public Guid ItemId { get; set; } = default!;
+    public int ReorderLevel { get; set; }
+    public int ReorderQty { get; set; }
+    public int LeadTimeDays { get; set; }
+}
+
+public class ReorderAlertDto
+    {
+        public Guid ItemId { get; set; } = default!;
+        public string Message { get; set; } = default!;
+        public DateTime CreatedAt { get; set; }
+    }

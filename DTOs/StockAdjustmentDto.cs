@@ -1,12 +1,20 @@
-public class StockAdjustmentDto
+// StockAdjustment DTO
+public class StockAdjustmentDto : BaseDto
 {
-    public int AdjustmentId { get; set; }
-    public int ItemId { get; set; }
-    public int WarehouseId { get; set; }
-    public int QuantityAdjusted { get; set; }
-    public string AdjustmentType { get; set; } = string.Empty;
-    public string Reason { get; set; } = string.Empty;
-    public int AdjustedBy { get; set; }
-    public int? AdjusterUserId { get; set; }
-    public DateTime AdjustmentDate { get; set; }
+    public Guid ItemId { get; set; } = default!;
+    public Guid WarehouseId { get; set; } = default!;
+    public string Reason { get; set; } = default!;
+    public int QuantityChange { get; set; }
+    public string AdjustedBy { get; set; } = default!;
+    public DateTime Date { get; set; }
+}
+
+// DTO for creating StockAdjustment
+public class StockAdjustmentCreateDto
+{
+    public Guid ItemId { get; set; } = default!;
+    public Guid WarehouseId { get; set; } = default!;
+    public string Reason { get; set; } = default!;
+    public int QuantityChange { get; set; }
+    public string AdjustedBy { get; set; } = default!;
 }

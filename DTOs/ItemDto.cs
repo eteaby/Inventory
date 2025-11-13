@@ -1,15 +1,26 @@
-public class ItemDto
+// 1. Item DTO
+public class ItemDto : BaseDto
 {
-    public int ItemId { get; set; }
-    public string ItemName { get; set; } = string.Empty;
-    public string SKU { get; set; } = string.Empty;
-    public string UnitOfMeasure { get; set; } = string.Empty;
-    public int CategoryId { get; set; }
-    public decimal CostPrice { get; set; }
-    public decimal SellingPrice { get; set; }
-    public int ReorderLevel { get; set; }
-    public int SafetyStock { get; set; }
-    public string? Description { get; set; }
-    public string? Barcode { get; set; }
+    public string ItemName { get; set; } = default!;
+    public string SKU { get; set; } = default!;
+    public string CategoryId { get; set; } = default!;
+    public string UnitOfMeasure { get; set; } = default!;
+    public int ReorderLevel { get; set; } = 0;
+    public int SafetyStock { get; set; } = 0;
+    public double CostPrice { get; set; } = 0;
+    public double SellingPrice { get; set; } = 0;
+    public DateTime? ExpiryDate { get; set; }
+}
+
+public class ItemCreateDto
+{
+    public string ItemName { get; set; } = default!;
+    public string SKU { get; set; } = default!;
+    public string CategoryId { get; set; } = default!;
+    public string UnitOfMeasure { get; set; } = default!;
+    public int ReorderLevel { get; set; } = 0;
+    public int SafetyStock { get; set; } = 0;
+    public double CostPrice { get; set; } = 0;
+    public double SellingPrice { get; set; } = 0;
     public DateTime? ExpiryDate { get; set; }
 }
